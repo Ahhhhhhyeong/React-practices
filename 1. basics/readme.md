@@ -9,3 +9,5 @@
 6. ex06: React JSX 기반으로 애플리케이션 리팩토링
 7. ex07: ex00.cra Reconfiguration(직접 설정)
 8. ex08: JSX 사용방법
+9. webpack-practices
+10. babel-practices
