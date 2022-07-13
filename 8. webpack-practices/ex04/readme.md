@@ -5,7 +5,7 @@
     - ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader```
 
 2. CSS Loader 설정(webpack.config.js)
-```json
+```js
     module: {
         rules: [{
             test: /\.css$/i ,

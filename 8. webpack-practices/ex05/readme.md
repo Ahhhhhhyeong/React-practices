@@ -5,13 +5,13 @@
     - ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader```
 
 2. CSS Loader 설정(webpack.config.js)
-```json
-    module: {
-        rules: [{
-            test: /\.css$/i ,
-            use: ['style-loader', 'css-loader']
+```js
+    module:{
+        rules:[{
+            test: /\.(sa|sc|c)ss$/i,
+            use: ['style-loader', 'css-loader', 'sass-loader']
         }]
-    } ,
+    },
 ```
 
 3. 개발 서버 실행
