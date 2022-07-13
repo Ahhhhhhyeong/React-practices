@@ -1,5 +1,5 @@
-# ex04
-### CSS Module 번들링 하기
+# ex05
+### SASS/SCSS 모듈 번들링 하기
 
 1. 설치 패키지
     - ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader```
