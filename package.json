@@ -1,8 +1,11 @@
 {
   "devDependencies": {
+    "css-loader": "^6.7.1",
     "express": "^4.18.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
   },
   "name": "react-practices",
   "description": "1. **기본개념(Basics)**\r 2. **컴포넌트(Component)**\r 3. **라우팅(Routing)**\r 4. **Flux: Redux**\r 5. Testing(Rest)\r 6. Perfomance\r 7. **통합r개발(Integration)**\r     - FE(React) + BE(node)\r     - FE(React) + BE(spring boot)\r 8. [참고1] webpack-practices\r 9. [참고2] babel-practices",
