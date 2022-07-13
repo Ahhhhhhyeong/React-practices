@@ -8,3 +8,5 @@
 7. **통합r개발(Integration)**
     - FE(React) + BE(node)
     - FE(React) + BE(spring boot)
+8. [참고1] webpack-practices
+9. [참고2] babel-practices
