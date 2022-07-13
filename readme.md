@@ -5,7 +5,7 @@
 4. **Flux: Redux**
 5. Testing(Rest)
 6. Perfomance
-7. **통합r개발(Integration)**
+7. **통합개발(Integration)**
     - FE(React) + BE(node)
     - FE(React) + BE(spring boot)
 8. [참고1] webpack-practices
