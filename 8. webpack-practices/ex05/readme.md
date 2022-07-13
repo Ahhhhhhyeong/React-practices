@@ -2,7 +2,7 @@
 ### CSS Module 번들링 하기
 
 1. 설치 패키지
-    - ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader```
+    - ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader```
 
 2. CSS Loader 설정(webpack.config.js)
 ```json
