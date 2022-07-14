@@ -1,3 +1,12 @@
+# ex08
+### JSX 사용방법
+
+1. 특징1: HTML과의 차이점
+2. 특징2: Single Root
+3. 함수 컴포넌트 만들기
+4. **클래스 컴포넌트 만들기**
+
+## 설정
 
 1. 설치
    1. ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react```
@@ -5,8 +14,8 @@
 
 2. 설정파일  
    1. babel.config.json
-   2. webpack.config.io
+   2. webpack.config.js
 
 3. npm scripting
-4. 애플리케이션 실행(개발 서버 실행)
-5. 빌드(번들링)
+4. 실행
+   1. ```$ npm run debug src=(01|02|03|04|05|06|07|08) ```
