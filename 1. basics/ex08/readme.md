@@ -4,7 +4,9 @@
 1. 특징1: HTML과의 차이점
 2. 특징2: Single Root
 3. 함수 컴포넌트 만들기
-4. **클래스 컴포넌트 만들기**
+4. Pure React(React API)
+5. **클래스 컴포넌트 만들기**
+6. 특징3: JSX 표현식 표기법({js expression})
 
 ## 설정
 
