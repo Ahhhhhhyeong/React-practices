@@ -3,8 +3,14 @@
 
 ### 1. Inline Styling: src01
 ### 2. Normal CSS: src02
-### 3. CSS Module
-### 4. 
+   - css-loader options: {module; false}
+   - ```$ npm run debug src=02 css-module=false```
+### 3. CSS Module I
+   - css-loader options: {module; true}
+   - ```$ npm run debug src=03 (css-module=true)```
+### 4. CSS Module II
+   - css-loader options: {module; true}
+   - ```$ npm run debug src=03 (css-module=true)```
 ### 5. 
 ### 6. 
 ### 7. 

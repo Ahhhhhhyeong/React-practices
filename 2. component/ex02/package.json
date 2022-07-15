@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "debug": "npx webpack server --progress --env ",
-    "build": "npx webpack"
+    "debug": "npx webpack serve --config config/webpack.config.js --progress --env",
+    "build": "npx webpack --config config/webpack.config.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
