@@ -10,7 +10,7 @@
    - ```$ npm run debug src=03 (css-module=true)```
 ### 4. CSS Module II
    - css-loader options: {module; true}
-   - ```$ npm run debug src=03 (css-module=true)```
+   - ```$ npm run debug src=04 (css-module=true)```
 ### 5. 
 ### 6. 
 ### 7. 
