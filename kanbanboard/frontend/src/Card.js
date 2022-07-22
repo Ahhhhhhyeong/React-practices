@@ -19,10 +19,11 @@ export default function Card({no, title, description, status, tasks}) {
                 >
                     {title}                 
                 </div>
-                    <div class='Card__Details' >
-                        {description}
-                        <TaskList tasks={tasks} /> 
-                    </div>
+
+                <div class='Card__Details' id={no} >
+                    {description}
+                    <TaskList tasks={tasks} /> 
+                </div>
                     
         </div>
     );
