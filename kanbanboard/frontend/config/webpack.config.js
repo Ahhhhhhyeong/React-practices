@@ -1,12 +1,11 @@
 const path = require('path');
 
-console.log(path.resolve("./src/index.js"));
 module.exports = function(env) { 
     return {
         mode: 'development',
         entry: path.resolve(`src/index.js`),
         output: {
-            path: path.resolve('public/assets/js'),
+            path: path.resolve('public'),
             filename: 'main.js',
             assetModuleFilename:'assets/images/[hash][ext]'
         },
