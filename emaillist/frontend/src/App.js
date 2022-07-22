@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './assets/css/App.css';
 import RegisterForm from './RegisterForm';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
-
-import emails from './assets/json/data.json'
+import data from './assets/json/data.json'
 
 const App = () => {
+  const [emails, setEmails] = useState(data);
+  
+  const notifyEmailDelete = function(no) {
+    console.log(no);  
+  }
+  const notifyEmailAdd  = function(email) {
+    console.log(email);   
+  }
+
+  const notifyKeywordChanged = function(keyword){
+    const result = data.filter(e => {
+      e.firstName.indexOf(keyword) !== -1 ||
+      e.lastName.indexOf(keyword) !== -1 ||
+      e.email.indexOf(keyword) !== -1
+    });
+    console.log(result);
+    setEmails(result);
+
+  } 
   return (
     <div id={styles.App}>
-      <RegisterForm />
-      <SearchBar />
+      <RegisterForm  callback={notifyEmailAdd}/>
+      <SearchBar callback={notifyKeywordChanged} />
       <Emaillist emails={emails} />
     </div>
   )

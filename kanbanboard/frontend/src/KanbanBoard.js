@@ -6,6 +6,7 @@ function KanbanBoard() {
     return (
         <div className={'KanbanBoard'}>
             <CardList title={'ToDo'} cards={cards.filter(e => e.status === 'ToDo')}/>
+            
             <CardList title={'Doing'} cards={cards.filter(e => e.status === 'Doing')}/>
             <CardList title={'Done'} cards={cards.filter(e => e.status === 'Done')}/>
         </div>
