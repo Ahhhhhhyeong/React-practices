@@ -6,7 +6,7 @@ import styles from './assets/css/TaskList.css';
 export default function TaskList({cardNo, tasks, notifyAddTask, notifyChangeTaskDone}) {
     return (
         <div className='TaskList'>
-            <ul>
+            <ul>               
                 {tasks.map(task => <Task
                                         key={task.no}
                                         no={task.no}

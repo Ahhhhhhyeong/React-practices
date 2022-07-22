@@ -5,20 +5,25 @@ import Task from "./Task";
 import styles from './assets/scss/Card.scss';
 
 export default function Card({no, title, description, status, tasks}) {
+    let stat = false;
+    const openCard = e => {
+        console.log(e);        
+    }
+   
     return (
         <div className={styles.Card}>
-            
-            <div className=''>
                 <div 
                 className={[styles.Card__Title, styles.Card__Title__Open].join(" ")}
-                onClick = {e => {}}>
+                id={no}
+                 onClick = {openCard}
+                >
                     {title}                 
                 </div>
-                <div class='Card__Details'>
-                    {description}
-                    <TaskList tasks={tasks} />
-                </div>        
-            </div>
+                    <div class='Card__Details' >
+                        {description}
+                        <TaskList tasks={tasks} /> 
+                    </div>
+                    
         </div>
     );
 }

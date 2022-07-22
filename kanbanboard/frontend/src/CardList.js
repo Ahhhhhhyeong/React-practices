@@ -4,6 +4,7 @@ import Card from "./Card";
 import styles from "./assets/css/CardList.css";
 
 export default function CardList({title, cards}) {
+    //console.log(cards);
     return (
         <div className={styles.CardList}>
             <h1>{title}</h1>
@@ -13,7 +14,7 @@ export default function CardList({title, cards}) {
                 title={card.title}
                 description={card.description}
                 status={card.status} 
-                task={card.status}
+                tasks={card.tasks}
                 />)}
         </div>
     )
