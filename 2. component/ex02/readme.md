@@ -24,7 +24,8 @@
      - ```npm i @fortawesome/free-regular-svg-icons ```
      - ```npm i @fortawesome/free-brands-svg-icons```
 ### 8. React Modal
-
+   - 설치
+     - ```$ npm i react-modal```
 
 ---
 
