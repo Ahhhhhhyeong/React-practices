@@ -40,6 +40,7 @@ export default class App extends Component {
     componentDidMount(){
         setInterval(() => {
             this.setState(this._getCurrentClockTime());
+            
         }, 1000);
     }
 

@@ -4,9 +4,9 @@ import Clock from './Clock';
 
 export default function App() {
     
-    const [currentTime, setcurrentTime] = 
+    const [currentTime, setcurrentTime] = useState(getCurrentClockTime());
     
-    const _getCurrentClockTime = () => {
+    const getCurrentClockTime = () => {
         const now = new Date();
         const hours = now.getHours();
 
