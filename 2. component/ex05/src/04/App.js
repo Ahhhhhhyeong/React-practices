@@ -4,8 +4,8 @@ import Clock from './Clock';
 
 export default function App() {
     
-    const [currentTime, setcurrentTime] = useState(getCurrentClockTime());
-    
+    const [currentTime, setcurrentTime] = useState(getCurrentClockTime);
+    const [ticks, setTicks] = useState(0);
     const getCurrentClockTime = () => {
         const now = new Date();
         const hours = now.getHours();
@@ -18,13 +18,15 @@ export default function App() {
         }
     }
 
-    useEffect(() => {
-        console.log('After Mount(componentDidMount)');
-
+    useEffect(() => {        
+        const interval = setInterval(() => {
+            setcurrentTime(getCurrentClockTime());
+            setTicks(ticks + 1);
+       }, 1000);
  
         return (() => {
-            console.log('After Unmount(componentWillUnmount)');
-        });       
+            clearInterval(interval);
+        }); 
     }, []);
 
    
