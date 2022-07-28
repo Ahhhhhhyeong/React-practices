@@ -2,10 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './assets/scss/App.scss'
 import Clock from './Clock';
 
-export default function App() {
-    
-    const [currentTime, setcurrentTime] = useState(getCurrentClockTime);
-    const [ticks, setTicks] = useState(0);
+export default function App() {   
     const getCurrentClockTime = () => {
         const now = new Date();
         const hours = now.getHours();
@@ -17,17 +14,26 @@ export default function App() {
             session: hours > 12 ? 'pm': 'am'
         }
     }
+    const 
+    [currentTime, setcurrentTime] = useState(getCurrentClockTime);
+    const [ticks, setTicks] = useState(0);
+    // useEffect(() => {        
+    //     const interval = setInterval(() => {
+    //         setcurrentTime(getCurrentClockTime());
+    //         setTicks(ticks + 1);
+    //    }, 1000);
+ 
+    //     return (() => {
+    //         clearInterval(interval);
+    //     }); 
+    // }, []);
 
     useEffect(() => {        
-        const interval = setInterval(() => {
+        setTimeout(() => {
             setcurrentTime(getCurrentClockTime());
             setTicks(ticks + 1);
-       }, 1000);
- 
-        return (() => {
-            clearInterval(interval);
-        }); 
-    }, []);
+       }, 1000); 
+    }, [currentTime]);
 
    
     return (
