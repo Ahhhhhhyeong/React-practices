@@ -4,30 +4,12 @@ import RegisterForm from './RegisterForm';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
 
-const App = () => {
+const App = (keyword) => {
   const [emails, setEmails] = useState([]);
   
-  const notifyEmailDelete = function(no) {
-    console.log(no);  
-  }
-  const notifyEmailAdd  = function(email) {
-    console.log(email);   
-  }
-
-  const notifyKeywordChanged = function(keyword){
-    const result = data.filter(e => {
-      e.firstName.indexOf(keyword) !== -1 ||
-      e.lastName.indexOf(keyword) !== -1 ||
-      e.email.indexOf(keyword) !== -1
-    });
-    console.log(result);
-    setEmails(result);
-
-  } 
-
-  useEffect(async () => {
+  const fetchData = async () => {
     try{
-      const response = await fetch('/api', {
+      const response = await fetch(!keyword ? `/api?kw=${keyword}` : '/api', {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +32,47 @@ const App = () => {
     } catch(error) {
       console.error(error);
     }
+  }
+  
+  const notifyEmailDelete = function(no) {
+    console.log(no);  
+  }
 
+  const notifyEmailAdd  = async function(email) {  
+      try{
+        const response = await fetch(`/api`, {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(email),
+        });
+  
+        if(!response.ok){
+          throw new Error(`${response.status} ${response.statusText}`);
+        }
+  
+        const json = await response.json();
+  
+        if(json.result !== 'success'){
+          throw new Error(`${json.result} ${json.message}`);
+        }
+  
+        setEmails([json.data, ...emails]);    
+
+      } catch(error) {
+        console.error(error);
+      }
+    
+  }
+
+  const notifyKeywordChanged = async function(keyword){  
+    fetchData(keyword);  
+  } 
+
+  useEffect(() => {    
+    fetchData('');
   }, []);
 
   return (
