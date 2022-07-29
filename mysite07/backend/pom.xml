@@ -6,24 +6,33 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.4</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<version>2.6.6</version>
+		<relativePath />
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>emaillist07</artifactId>
+	<artifactId>mysite07</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>emaillist</name>
-	<description>Demo project for Spring Boot</description>
+	<name>mysite07</name>
+	
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
 	</properties>
+	
 	<dependencies>
 		<!-- Core Starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		
+
+		<!-- Spring Boot Devtools: Live Reload -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
 		<!-- Web Starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -36,7 +45,7 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- MyBatis Starter -->		
+		<!-- MyBatis Starter -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -49,8 +58,13 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		
+
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 
 		<!-- Boot Test Integration -->
 		<dependency>
@@ -58,24 +72,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		<!-- Spring Boot Devtools: Live Reload -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-		
-		<!-- Lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency> 
-		
 	</dependencies>
 
 	<build>
-		<finalName>emaillist07</finalName>
+		<finalName>mysite07</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -89,11 +89,11 @@
 						<exclude>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot-devtools</artifactId>
-						</exclude>						
+						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>									
+			</plugin>
+					
 		</plugins>
 	</build>
-
 </project>
