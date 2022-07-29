@@ -6,7 +6,7 @@
 		  select no,
 		         name,
 		         message,
-		         date_format(reg_date, '%Y-%m-%d') as regDate
+		         date_format(regdate, '%Y-%m-%d') as regDate
 		    from guestbook
 		]]>
 		<if test="_parameter > 0">
