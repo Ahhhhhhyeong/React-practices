@@ -1,7 +1,6 @@
 package me.kickscar.mysite.controller;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,18 +49,11 @@ public class GalleryController {
 	@DeleteMapping(value="/{no}")
 	public ResponseEntity<JsonResult> delete(@PathVariable("no") Long no) {
 		galleryService.deleteGalleryImage(no);
-		String[] ss = new String[] {"","",""};
-		
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("no", no);
-		
-		return 
-				ResponseEntity
+		return
+			ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult
-				.success(new HashMap<String, Long>(){{
-			put("no", no);
-		}}));
+				.body(JsonResult.success(new HashMap<String, Long>(){{
+					put("no", no);
+				}}));
 	}
-	
 }
