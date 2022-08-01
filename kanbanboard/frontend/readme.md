@@ -1,8 +1,10 @@
 # emaillist: frontend
 
 1. 설치
-   1. ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react prop-type```
+   1. ```$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react prop-type ```
    2.  ```$ npm i react react-dom ```  
+   3.  ```$ npm i react-addons-update  ```
+   4.  ```$ npm i -D @babel/plugin-syntax-throw-expressions @babel/plugin-transform-runtime```
 
 2. 설정파일  
    1. babel.config.json
