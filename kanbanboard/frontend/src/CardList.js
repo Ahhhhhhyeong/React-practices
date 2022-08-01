@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Card from "./Card";
 import styles from "./assets/css/CardList.css";
 
 export default function CardList({title, cards}) {
-    //console.log(cards);
+    console.log(cards);
     return (
         <div className={styles.CardList}>
             <h1>{title}</h1>

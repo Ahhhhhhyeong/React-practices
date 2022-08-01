@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TaskList from "./TaskList";
 import Task from "./Task";
@@ -6,13 +6,49 @@ import styles from './assets/scss/Card.scss';
 
 export default function Card({no, title, description, status, tasks}) {
    const [showDetail, setShowDetail] = useState(false);
+   const [cardList, setCardList] = useState([]);
+
+
+
+   const fetchBoard = async (no) => {
+        try {
+            const response = await fetch('/api/task',{
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(no)
+            });
+
+            if(!response.ok){
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+    
+            const json = await response.json();
+            if(json.result !== 'success'){
+                throw new Error(`${json.result} ${json.message}`);
+            }
+
+            setCardList(json.data);
+            console.log(json.data);
+            
+        } catch (error) {
+            console.error(error);
+        }
+   };
+
 
    return (
         <div className={styles.Card}>
                 <div 
                 className={!showDetail ? styles.Card__Title : [styles.Card__Title, styles.Card__Title__Open].join(" ")}
                 id={no}
-                 onClick = {e => setShowDetail(showDetail=>!showDetail) /* showDetail을 통해 true: 오픈, false: 닫음 */ }
+                 onClick = {e => {
+                    setShowDetail(showDetail=>!showDetail); /* showDetail을 통해 true: 오픈, false: 닫음 */
+                    fetchBoard(no);
+                    console.log(cardList);
+                }}
                 >
                     {title}                 
                 </div>
