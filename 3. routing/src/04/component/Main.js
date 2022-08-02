@@ -5,7 +5,19 @@ export default function Main() {
     return (
         <div>
             <h1>Main</h1>
-
+            <Link>
+                {/* <ul>
+                    <li><Link to={"/"}>[Main]</Link></li>
+                    <li><Link to={"/guestbook"} >[Guestbook]</Link></li>
+                    <li><Link to={"/gallery"} >[Gallery]</Link></li>
+                </ul> */}
+                <ul>
+                    <li><NavLink to={"/"}>[Main]</NavLink></li>
+                    <li><NavLink to={"/guestbook"} >[Guestbook]</NavLink></li>
+                    <li><NavLink to={"/gallery"} >[Gallery]</NavLink></li>
+                </ul>
+                {/*  */}
+            </Link>
         </div>
     );
 }
